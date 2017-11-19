@@ -2,10 +2,7 @@ $palettes: (
   white: (
     base: #ffffff,
     dark: #dadfe7,
-    light: #e8ebf1,
-    extra-light: #f7faff,
-    extra-dark: #d5deec,
-    another-white: #eef1f5
+    light: #e8ebf1
   ),
   black: (
     base: #000000,
@@ -14,22 +11,12 @@ $palettes: (
   primary: (
     base: #062f4d,
     light: #0c4269,
-    extra-light: #829abd,
-    dark: #001f36,
-    another-extra-light: #8199be
+    dark: #001f36
   ),
   secondary: (
     base: #1dd491,
     light: #5de9bc,
     dark: #7bc24d
-  ),
-  other: (
-    base: #77869b,
-    extra-base: #727e8f,
-    light: #a1acbc,
-    dark: #596880,
-    another-color: #aabad2,
-    another-color-2: #c4ccd4
   ),
   red: (
     base: #e21e1e

@@ -9,7 +9,6 @@ $fa-font-path: "../bower_components/components-font-awesome/fonts";
 @import "_functions/variables",
         "_functions/mixin",
         "_functions/fonts",
-        "_functions/flex",
         "_functions/normalize",
         "_functions/grid",
         "_functions/icons";
@@ -25,21 +24,3 @@ $fa-font-path: "../bower_components/components-font-awesome/fonts";
 // CONTENT
 @import "_content/modal",
         "_content/styled-select";
-
-// HOMEPAGE
-@import "_homepage/hero",
-        "_homepage/struggle",
-        "_homepage/calculator",
-        "_homepage/app",
-        "_homepage/companies",
-        "_homepage/testimonials",
-        "_homepage/compatible",
-        "_homepage/product";
-
-// PRODUCT
-@import "_products/single-product",
-        "_products/cart-block",
-        "_products/compatibility-checker";
-
-// HOW IT WORKS
-@import "_how-it-works/general";

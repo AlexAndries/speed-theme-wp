@@ -84,48 +84,6 @@ p {
     line-height: 2rem;
   }
   
-  &--styled {
-    padding-left: 3rem;
-    position: relative;
-    
-    @include respond-to(xs) {
-      br {
-        display: none;
-      }
-    }
-    
-    &:before {
-      background: palette(other);
-      bottom: .9rem;
-      content: "";
-      left: 0;
-      position: absolute;
-      top: .7rem;
-      width: .1rem;
-    }
-  }
-  
-  &--styled-right {
-    padding-right: 3rem;
-    position: relative;
-    
-    @include respond-to(xs) {
-      br {
-        display: none;
-      }
-    }
-    
-    &:before {
-      background: palette(other);
-      bottom: .9rem;
-      content: "";
-      right: 0;
-      position: absolute;
-      top: .7rem;
-      width: .1rem;
-    }
-  }
-  
   h2 {
     @extend .h2;
     
@@ -260,51 +218,5 @@ p {
 }
 
 .font {
-  &_light {
-    font-family: 'Avenir Light';
-    
-    &-oblique {
-      font-family: 'Avenir Light Oblique';
-    }
-  }
-  
-  &_book {
-    font-family: 'Avenir Book';
-    
-    &-oblique {
-      font-family: 'Avenir Book Oblique';
-    }
-  }
-  
-  &_normal {
-    font-family: 'Avenir Roman';
-    
-    &-oblique {
-      font-family: 'Avenir Oblique';
-    }
-  }
-  
-  &_medium {
-    font-family: 'Avenir Medium';
-    
-    &-oblique {
-      font-family: 'Avenir Medium Oblique';
-    }
-  }
-  
-  &_bold {
-    font-family: 'Avenir Black';
-    
-    &-oblique {
-      font-family: 'Avenir Black Oblique';
-    }
-  }
-  
-  &_heavy {
-    font-family: 'Avenir Heavy';
-    
-    &-oblique {
-      font-family: 'Avenir Heavy Oblique';
-    }
-  }
+
 }
