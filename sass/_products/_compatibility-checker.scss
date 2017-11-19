@@ -1,0 +1,133 @@
+$compatibilityClass: '.product-compatibility';
+#{$compatibilityClass} {
+  padding: 0 3rem;
+  
+  @include respond-to(xs) {
+    padding: 0 1.5rem;
+  }
+  
+  &__home {
+    padding-top: 6.5rem;
+  }
+  
+  &__title {
+    color: palette(primary);
+    letter-spacing: .05em;
+    margin-bottom: 1rem;
+    
+    @include respond-to(xs) {
+      letter-spacing: 0;
+    }
+  }
+  
+  &__content {
+    margin-bottom: 4rem;
+    
+    @include respond-to(lt-sm) {
+      br {
+        display: none;
+      }
+    }
+    
+  }
+  
+  &__image {
+    margin-bottom: 4.8rem;
+  }
+  
+  &__step {
+    max-height: 100%;
+    padding-top: 9rem;
+    width: 100%;
+    
+    @include respond-to(xs) {
+      padding-top: 6rem;
+    }
+    
+    &-back {
+      left: 2.5rem;
+      position: absolute;
+      top: 2.5rem;
+      width: 5rem;
+    }
+    
+    &-title {
+      font-size: 2.4rem;
+      letter-spacing: .05em;
+      line-height: 4rem;
+      margin-bottom: 1rem;
+      
+      @include respond-to(xs) {
+        letter-spacing: 0;
+        line-height: 3.5rem;
+      }
+      
+      @include respond-to(lt-sm) {
+        br {
+          display: none;
+        }
+      }
+    }
+    
+    &-content {
+      @include respond-to(lt-sm) {
+        br {
+          display: none;
+        }
+      }
+    }
+    
+    &-image {
+      margin-top: 5.5rem;
+      
+      @include respond-to(xs) {
+        margin-top: 2rem;
+      }
+    }
+    
+    &-actions {
+      bottom: 0;
+      left: 0;
+      padding: 8rem 0;
+      position: absolute;
+      width: 100%;
+      
+      @include respond-to(xs) {
+        padding: 2rem 0;
+      }
+      
+      .button {
+        margin: 0 2rem;
+        text-transform: capitalize;
+        
+        @include respond-to(xs) {
+          margin: .5rem 0;
+          
+        }
+      }
+    }
+  }
+  
+  &__good,
+  &__bad {
+    padding-top: 6rem;
+    
+    #{$compatibilityClass} {
+      &__image {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+  
+  &__bad {
+    padding-top: 11.5rem;
+  }
+  
+  .button {
+    min-width: 18rem;
+    
+    @include respond-to(sm) {
+      min-width: 14.5rem;
+    }
+  }
+}

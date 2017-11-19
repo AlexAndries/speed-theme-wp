@@ -1,0 +1,298 @@
+@import "functions/_mixin.scss";
+@import "functions/_variables.scss";
+
+body {
+	&, * {
+		vertical-align: top;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		outline: none !important;
+	}
+}
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+body, p {
+	line-height: 23px;
+	font-size: 14px;
+}
+
+body a, body label {
+	display: inline-block;
+}
+
+#backtoblog {
+	margin: 0;
+}
+
+.login.wp-core-ui .button-primary {
+	height: 34px;
+	line-height: 28px;
+	border-radius: 0;
+	padding: 0 12px 2px;
+	border-color: transparent;
+}
+
+.login.wp-core-ui input[type=checkbox] {
+	box-shadow: none;
+	-ms-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-shadow: none;
+}
+
+.login h1 a {
+	min-height: 92px;
+	width: auto;
+	background: transparent url(../../../images/login/logo-login.png) no-repeat center center;
+  margin-bottom: 10px;
+}
+
+#login {
+	top: 50%;
+	position: relative;
+	max-width: 391px;
+	width: 100%;
+	padding: 0;
+	margin: -265px auto 0;
+}
+
+.login form {
+	margin-top: 0;
+	margin-left: 0;
+	padding: 23px;
+	font-weight: 400;
+}
+
+.login #nav {
+	font-size: 14px;
+	padding: 0 23px;
+	text-align: center;
+	margin: 23px 0 0;
+	font-weight: 500;
+}
+
+.login #backtoblog {
+	font-size: 14px;
+	padding: 0 23px;
+	text-align: center;
+	margin: 12px 0 11px 0;
+	font-weight: 500;
+}
+
+.login h1 a {
+	height: 92px;
+	font-size: 23px;
+	font-weight: 400;
+	line-height: 23px;
+	margin: 0 auto 10px;
+	padding: 0;
+	text-decoration: none;
+	max-width: 391px;
+	width: 100%;
+}
+
+.login {
+	background: url(../../../images/login/login-background.jpg) no-repeat center center/cover;
+}
+
+.login form label {
+	font-size: 14px;
+	line-height: 23px;
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #00315b !important;
+}
+
+.login form .input, .login input[type=text] {
+	font-size: 19px;
+	width: 100%;
+	padding: 9px;
+	line-height: 23px;
+	margin: 5px 0 18px 0;
+}
+
+.login form .input, .login form input[type=checkbox], .login input[type=text] {
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-ms-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-o-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	font-weight: 500;
+	border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.login form .forgetmenot label {
+	font-size: 14px;
+	line-height: 23px;
+	display: inline-block;
+}
+
+.login form .forgetmenot {
+	width: 100%;
+	display: block;
+	margin: 12px 0 11px 0 !important;
+}
+
+.login #backtoblog a,
+.login #nav a {
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #000, 1px 1px 1px #fa8564;
+}
+
+.login #backtoblog a:hover,
+.login #nav a:hover {
+	color: #fa8564;
+}
+
+#login form p.submit {
+	margin: 23px 0 0 0;
+	padding: 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.login.wp-core-ui .button-primary {
+	width: 100%;
+	height: 46px;
+	line-height: 28px;
+	padding: 2px 12px 2px 12px;
+	font-size: 19px;
+	text-transform: uppercase;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-ms-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-o-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	text-shadow: 0 0 0;
+}
+
+input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+	border: 1px solid transparent !important;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: none;
+}
+
+input:hover, input:focus {
+	border: 1px solid transparent !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	outline: none !important;
+}
+
+input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+	transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease, opacity 0.3s ease-in-out, padding 0.3s ease;
+	-webkit-transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease, opacity 0.3s ease-in-out, padding 0.3s ease;
+	-moz-transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease, opacity 0.3s ease-in-out, padding 0.3s ease;
+	-ms-transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease, opacity 0.3s ease-in-out, padding 0.3s ease;
+	-o-transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease, opacity 0.3s ease-in-out, padding 0.3s ease;
+	
+}
+
+.login #login_error, .login .message {
+	width: 345px;
+	border-left: 0 solid transparent;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-ms-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+	-o-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+#login_error, .login .message {
+	margin: 23px 23px 0 23px;
+	padding: 12px 23px 11px 23px;
+}
+
+@media screen and (max-height: 600px) {
+	body {
+		height: 130%;
+	}
+	
+	#login {
+		top: 50%;
+	}
+}
+
+@media screen and (max-height: 480px) {
+	body {
+		height: 150%;
+	}
+	
+	#login {
+		top: 50%;
+	}
+}
+
+/** | Generated Code | */
+
+body, #wp-auth-check-wrap #wp-auth-check {
+	background-color: palette(secondary);
+}
+
+.login form {
+	background-color: transparentize(palette(white), 0.2);
+}
+
+.login #backtoblog a, .login #nav a, .login a {
+	&, &:hover, &:active {
+		color: palette(white);
+	}
+}
+
+.login, .login form label, .login form, .login .message {
+	color: palette(white);
+}
+
+.login.wp-core-ui .button-primary {
+	background-color: palette(secondary);
+}
+
+.login.wp-core-ui .button-primary:hover, .login.wp-core-ui .button-primary:focus {
+	background-color: palette(main);
+}
+
+.login.wp-core-ui .button-primary {
+	color: palette(white);
+}
+
+.login form .input, .login form input[type=checkbox], .login input[type=text] {
+	background-color: transparentize(palette(white), 0.5);
+}
+
+.login form .input:hover, .login form input[type=checkbox]:hover, .login input[type=text]:hover, .login form .input:focus, .login form input[type=checkbox]:focus, .login input[type=text]:focus {
+	background-color: transparentize(palette(white), 0.2);
+}
+
+.login form .input, .login form input[type=checkbox], .login input[type=text] {
+	color: palette(secondary);
+}
+
+.login.wp-core-ui input[type=checkbox]:checked:before {
+	color: palette(secondary);
+}
+
+input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+	background-color: transparentize(palette(white), 0.5);
+}
+
+input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+	color: palette(secondary);
+}
+
+.login #login_error, .login .message {
+	background-color: transparentize(palette(white), 0.2);
+}
+
+.login .message, .login .message a, .login #login_error, .login #login_error a {
+	color: palette(secondary);
+}

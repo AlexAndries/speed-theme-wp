@@ -1,0 +1,25 @@
+@import "functions/_variables.scss";
+@import "functions/_mixin.scss";
+@import "blocks/_boxes.scss";
+@import "blocks/_form.scss";
+@import "blocks/_general.scss";
+@import "blocks/_layout.scss";
+@import "blocks/_media.scss";
+@import "blocks/_menu.scss";
+@import "blocks/_plugins.scss";
+@import "blocks/_post-page.scss";
+@import "blocks/_rtl.scss";
+@import "blocks/_tools.scss";
+@import "blocks/_top-bar.scss";
+@import "blocks/_responsive.scss";
+
+@import "blocks/_ame.scss";
+@import "blocks/_wordfence.scss";
+
+
+@import "theme/_theme.scss";
+
+.theme-overlay .theme-actions .inactive-theme,
+.theme-overlay.active .theme-actions .active-theme {
+  display: none !important;
+}

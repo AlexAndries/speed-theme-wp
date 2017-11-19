@@ -1,0 +1,166 @@
+$modalBlock: '.modal';
+#{$modalBlock} {
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  
+  &__overlay {
+    background-color: transparentize(palette(black), .6);
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  &__close {
+    background-color: palette(white);
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 4rem;
+    line-height: 4rem;
+    position: absolute;
+    right: -1rem;
+    text-align: center;
+    top: -1rem;
+    width: 4rem;
+    z-index: 20;
+  }
+  
+  &__text {
+    border-radius: 1rem;
+    height: 50rem;
+    width: 80rem;
+    
+    @include respond-to(xs) {
+      height: 30rem;
+    }
+  }
+  
+  &__video {
+    iframe {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  &__container {
+    left: 50%;
+    max-height: 95vh;
+    max-width: 95vw;
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    
+    &--dark {
+      background-color: palette(black);
+      #{$modalBlock}__close {
+        background-color: palette(black);
+        color: palette(white);
+      }
+    }
+    
+    &--light {
+      background-color: palette(white);
+      #{$modalBlock}__close {
+        background-color: palette(white);
+        color: palette(black);
+      }
+    }
+    
+    &--full {
+      @include respond-to(gt-md) {
+        width: 95vw;
+      }
+    }
+    
+    @for $i from 5 through 15 {
+      &--#{$i * 10} {
+        width: $i * 10rem;
+        
+        @include respond-to(lt-sm) {
+          width: $i * 15rem;
+        }
+      }
+    }
+    
+    &--compatibility-check {
+      border-radius: 1.5rem;
+      height: 64rem;
+      max-height: 100vh !important;
+      max-width: 100vw;
+      padding: 0;
+      width: 84rem;
+      overflow: hidden;
+      
+      @include respond-to(lt-sm) {
+        border-radius: 0;
+        height: 100vh;
+        width: 100vw;
+      }
+      
+      .modal__close {
+        color: palette(black, light);
+        font-size: 2.2rem;
+        right: 1rem;
+        top: 1rem;
+      }
+    }
+    
+    &--cart {
+      border-radius: 1.5rem;
+      padding: 2rem 3rem;
+      
+      @include respond-to(xs) {
+        padding: 2rem 1.5rem;
+      }
+      
+      .modal__close {
+        color: palette(black, light);
+        font-size: 2.2rem;
+        right: 1rem;
+        top: 1rem;
+      }
+    }
+    
+    .owl-carousel {
+      opacity: 1;
+    }
+  }
+  
+  &__title {
+    color: palette(black);
+    font-size: 3.6rem;
+    line-height: 4.8rem;
+    margin-bottom: 4rem;
+    
+    @include respond-to(xs) {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+  }
+  
+  &__button {
+    border: none;
+    font-size: 1.4rem;
+    padding: 2rem 13rem;
+    
+    @include respond-to(xs) {
+      padding: 2rem 8rem;
+    }
+  }
+  
+  &__container {
+    @include respond-to(lt-sm) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+styled-select {
+  max-width: 100%;
+}
+
+.styled-select {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  width: 30rem;
+  
+  &--full {
+    width: 100%;
+  }
+  
+  &--open {
+    z-index: 10;
+    
+    .styled-select {
+      &__drop-down {
+        max-height: 30rem;
+        overflow-y: auto;
+      }
+      
+      &__current {
+        &--spin {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  
+  &__current {
+    background-color: palette(white);
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    padding: 1.6rem 1.5rem;
+    width: 100%;
+    
+    @include respond-to(xs) {
+      font-size: 1.2rem;
+      letter-spacing: -.02em;
+      padding: 1.6rem 1rem;
+    }
+    
+    &--spin {
+      transition: .5s;
+    }
+    
+    &--remove {
+      cursor: pointer;
+      margin: -1rem 1rem;
+      padding: 1rem;
+      
+      @include respond-to(xs) {
+        margin: -1rem .2rem;
+        padding: 1rem .2rem;
+      }
+    }
+  }
+  
+  &__drop-down {
+    background-color: palette(white);
+    box-shadow: 1px 1px 2px transparentize(palette(black), .3);
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    transition: .5s;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  &__element {
+    cursor: pointer;
+    padding: .5rem 2rem;
+    position: relative;
+    transition: .5s;
+    z-index: 1;
+    
+    @include respond-to(gt-sm) {
+      &:hover {
+        background-color: transparentize(palette(primary), .8);
+        
+        &:after,
+        &:before {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+    
+    &:after,
+    &:before {
+      border-bottom: 1px solid palette(other);
+      content: "";
+      left: 1rem;
+      position: absolute;
+      right: 1rem;
+      transition: .5s;
+      z-index: 2;
+    }
+    
+    &:after {
+      bottom: 0;
+    }
+    
+    &:before {
+      top: -1px;
+    }
+    
+    &:first-child {
+      &:before {
+        content: none;
+      }
+    }
+    
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+    
+    &--selected {
+      background-color: palette(other);
+      color: palette(white);
+      
+      &:after,
+      &:before {
+        left: 0;
+        right: 0;
+      }
+      
+      @include respond-to(gt-sm) {
+        &:hover {
+          background-color: palette(other);
+        }
+      }
+    }
+    
+    &--disabled {
+      background-color: palette(black);
+      color: palette(white);
+      cursor: default;
+      
+      @include respond-to(gt-sm) {
+        &:hover {
+          background-color: palette(other);
+        }
+      }
+    }
+  }
+}

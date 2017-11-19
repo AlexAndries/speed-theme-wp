@@ -1,0 +1,28 @@
+<div class="styled-select {{ extraClass }} {{ hasAutoComplete ? 'styled-select--autocomplete':'' }}" ng-init="ss.open = !1"
+     ng-mouseenter="!hasAutoComplete && ss.openDropDownClickHandler(true)"
+     ng-mouseleave="!hasAutoComplete && ss.openDropDownClickHandler(false)"
+     ng-class="{'styled-select--open': ss.open}">
+  <div class="styled-select__current" ng-if="!hasAutoComplete"
+       ng-click="ss.openDropDownClickHandler(!ss.open)">
+    <span class="float-left" ng-bind-html="ss.currentFilter.label"></span>
+    <span class="styled-select__current--spin fa fa-chevron-right float-right"></span>
+    <span class="styled-select__current--remove fa fa-times float-right" ng-if="!ss.currentFilter.disabled && allowNull"
+          ng-click="ss.removeFilterClickHandler()"></span>
+  </div>
+  
+  <div class="styled-select__current flex flex__vertical-center" ng-if="hasAutoComplete">
+    <input type="text" class="float-left styled-select__current styled-select__current--input" ng-model="ss.autoComplete"
+           ng-focus="ss.openDropDownClickHandler(true)" ng-blur="ss.openDropDownClickHandler(false)" placeholder="{{ selectPlaceholder }}"/>
+    <span class="styled-select__current--remove fa fa-times float-right" ng-if="ss.currentFilter && !ss.currentFilter.disabled && allowNull"
+          ng-click="ss.removeFilterClickHandler()"></span>
+    <span class="styled-select__current--spin fa fa-chevron-right float-right"></span>
+  </div>
+  <div class="styled-select__drop-down">
+    <div class="styled-select__element" ng-repeat="(index, item) in ss.values | filter:ss.filterAutoComplete"
+         ng-if="!item.disabled"
+         ng-click="ss.changeFilterClickHandler(item)"
+         ng-class="{'styled-select__element--selected': item === ss.currentFilter}">
+      {{ item.label }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+footer {
+  padding: 9.5rem 0;
+  
+  @include respond-to(lt-sm) {
+    padding: 5rem 0;
+  }
+  
+  .menu {
+    li {
+      a {
+        color: palette(white);
+        letter-spacing: .075em;
+        line-height: 2.4rem;
+        text-transform: lowercase;
+        
+        &:hover {
+          color: palette(white, light);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  &__logo {
+    padding-bottom: 2rem;
+    
+    @include respond-to(lt-sm) {
+      padding-top: 5rem;
+    }
+  }
+}

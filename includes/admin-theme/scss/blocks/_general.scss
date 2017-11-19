@@ -1,0 +1,96 @@
+
+html {
+  background: #f1f1f1;
+}
+
+a {
+  color: #353535;
+  line-height: 23px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+* {
+  outline: none !important;
+}
+
+a:hover {
+  color: #f95e44;
+}
+
+body, p {
+  font-size: 14px;
+  line-height: 23px;
+  margin: 0 0 23px;
+  font-family: "Open Sans", sans-serif;
+  color: #666666;
+}
+
+body {
+  margin: 0;
+  height: auto;
+  min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+}
+
+h1 {
+  font-size: 35px;
+  line-height: 46px;
+  margin: 0 0 23px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 46px;
+  margin: 0 0 23px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 23px;
+  margin: 0 0 23px;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 300;
+  margin: 0 0 23px 0;
+}
+
+h5 {
+  font-size: 12px;
+  line-height: 19px;
+  font-weight: 300;
+}
+
+h6 {
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 300;
+}
+
+ul {
+  margin: 0 0 23px 0;
+}
+
+#dashboard_right_now li a:before, #dashboard_right_now li span:before {
+  color: #666666;
+  font: 400 17px/23px dashicons;
+}
+
+#wp-admin-bar-wp-logo {
+  display: none;
+}
+
+.show-admin-bar.user-admin-bar-front-wrap {
+  display: none;
+}

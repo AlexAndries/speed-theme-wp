@@ -1,0 +1,19 @@
+.not-found {
+  min-height: 63vh;
+  min-height: calc(100vh - 35.9rem);
+  padding: 19rem 0 10rem;
+  
+  @include respond-to(lt-sm) {
+    padding: 5rem 0;
+  }
+  
+  &__content {
+   margin: 3rem 0 2rem;
+  }
+  
+  &__image {
+    @include respond-to(lt-sm) {
+      margin-bottom: 2rem;
+    }
+  }
+}

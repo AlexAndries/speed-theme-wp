@@ -1,0 +1,4 @@
+<?php
+define('NO_REPLY_EMAIL', 'NO_REPLY_EMAIL');
+define('SENDGRID_KEY','SENDGRID_KEY');
+define('GOOGLE_MAPS_KEY', 'GOOGLE_MAPS_KEY');

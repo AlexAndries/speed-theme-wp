@@ -1,0 +1,168 @@
+[class^="#{map-get($grid, prefix)}-"] {
+  float: left;
+  min-height: 1px;
+  padding-left: map-get($grid, space);
+  padding-right: map-get($grid, space);
+  position: relative;
+}
+
+.row {
+  margin-left: -#{map-get($grid, space)};
+  margin-right: -#{map-get($grid, space)};
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-none {
+  float: none;
+}
+
+@for $i from 1 through map-get($grid, columns) {
+  .#{map-get($grid, prefix)}-#{$i} {
+    width: $i * 100 / map-get($grid, columns)* 1%
+  }
+  
+  .#{map-get($grid, prefix)}-leftset-#{$i} {
+    margin-left: $i * 100 / map-get($grid, columns)* 1%
+  }
+  
+  .#{map-get($grid, prefix)}-rightset-#{$i} {
+    margin-right: $i * 100 / map-get($grid, columns)* 1%
+  }
+  
+  .#{map-get($grid, prefix)}-push-#{$i} {
+    left: $i * 100 / map-get($grid, columns)* 1%
+  }
+  
+  .#{map-get($grid, prefix)}-pull-#{$i} {
+    right: $i * 100 / map-get($grid, columns)* 1%
+  }
+}
+
+.#{map-get($grid, clear-prefix)} {
+  height: 1px;
+  width: 100%;
+}
+
+.#{map-get($grid, hidden-prefix)} {
+  display: none;
+}
+
+@each $display in map-get($grid, displays) {
+  .#{map-get($grid, display-prefix)}-#{$display} {
+    display: #{$display};
+  }
+}
+
+@each $name, $point in $breakpoints {
+  @media #{$point} {
+    .float-left-#{$name} {
+      float: left;
+    }
+    
+    .float-right-#{$name} {
+      float: right;
+    }
+    
+    .float-none-#{$name} {
+      float: none;
+    }
+    
+    @for $i from 1 through map-get($grid, columns) {
+      .#{map-get($grid, prefix)}-#{$name}-#{$i} {
+        width: $i * 100 / map-get($grid, columns)* 1%
+      }
+      
+      .#{map-get($grid, prefix)}-#{$name}-leftset-#{$i} {
+        margin-left: $i * 100 / map-get($grid, columns)* 1%
+      }
+      
+      .#{map-get($grid, prefix)}-#{$name}-rightset-#{$i} {
+        margin-right: $i * 100 / map-get($grid, columns)* 1%
+      }
+      
+      .#{map-get($grid, prefix)}-#{$name}-push-#{$i} {
+        left: $i * 100 / map-get($grid, columns)* 1%
+      }
+      
+      .#{map-get($grid, prefix)}-#{$name}-pull-#{$i} {
+        right: $i * 100 / map-get($grid, columns)* 1%
+      }
+    }
+    
+    .#{map-get($grid, clear-prefix)}-#{$name} {
+      width: 100%;
+      height: 1px;
+    }
+    
+    .#{map-get($grid, hidden-prefix)}-#{$name} {
+      display: none !important;
+    }
+    
+    @each $display in map-get($grid, displays) {
+      .#{map-get($grid, display-prefix)}-#{$display}-#{$name} {
+        display: #{$display};
+      }
+    }
+  }
+}
+
+.container:after,
+.container:before,
+.row:after,
+.row:before {
+  content: " ";
+  display: table
+}
+
+.container:after,
+.row:after {
+  clear: both
+}
+
+* {
+  box-sizing: border-box
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: map-get($grid, space);
+  padding-right: map-get($grid, space)
+}
+
+.container:after,
+.container:before,
+.row:after,
+.row:before {
+  content: " ";
+  display: table
+}
+
+.container:after,
+.row:after {
+  clear: both
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+}
+
+.img-responsive {
+  height: auto;
+  max-width: 100%;
+}

@@ -1,0 +1,129 @@
+// display flex
+.flex {
+  display: flex !important;
+
+  &__primary {
+    flex: 1;
+  }
+  &--hide-mobile {
+    @include respond-to(xs) {
+      display: block !important;
+    }
+  }
+  &--hide-tablet {
+    @include respond-to(lt-sm) {
+      display: block !important;
+    }
+  }
+
+  &__center {
+    justify-content: center;
+  }
+
+  &__column {
+    flex-direction: column;
+  }
+
+  &__column-xs {
+    @include respond-to(xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__align-baseline {
+    align-items: baseline;
+    -webkit-align-items: baseline;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -ms-flex-align: baseline;
+    -ms-flex-pack: baseline;
+  }
+
+  &__justfify-end {
+    display: -webkit-flex;
+    justify-content: flex-end;
+  }
+
+  &__justfify-center {
+    display: -webkit-flex;
+    justify-content: center;
+  }
+
+  &__bottom {
+    align-items: flex-end;
+    display: -webkit-flex;
+    -ms-flex-align: end;
+    -webkit-box-align: end;
+    -ms-grid-row-align: end;
+  }
+
+  &__self-bottom {
+    -webkit-align-items: flex-end;
+    align-self: flex-end;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -ms-flex-item-align: end;
+  }
+
+  &__vertical-center {
+    align-items: center;
+    -webkit-align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+  }
+
+  &__vertical-top {
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    display: -webkit-flex;
+  }
+  
+  &__vertical-bottom {
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    display: -webkit-flex;
+  }
+
+  &__wrap {
+    display: -webkit-flex;
+    flex-wrap: wrap;
+
+    > * {
+      margin-right: -.1rem;
+
+      @include respond-to(xs) {
+        margin-right: 0;
+      }
+    }
+
+    &--xs {
+      @include respond-to(xs) {
+        flex-wrap: wrap;
+      }
+    }
+  
+    &--sm {
+      @include respond-to(sm) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &__space-around {
+    display: -webkit-flex;
+    justify-content: space-around;
+  }
+
+  &__space-between {
+    display: -webkit-flex;
+    justify-content: space-between;
+  }
+}
+
+@include respond-to(xs) {
+  .layout-column--xs {
+      @include flex($direction: column);
+  }
+}

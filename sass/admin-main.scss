@@ -1,0 +1,15 @@
+// CORE
+@import "_functions/variables",
+"_functions/mixin",
+"_functions/grid";
+
+table {
+  .column-active {
+    width: 65px;
+    text-align: center;
+  }
+  
+  .column-actions {
+    width: 155px;
+  }
+}

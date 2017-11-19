@@ -1,0 +1,123 @@
+.homepage-hero {
+  margin-top: -9rem;
+}
+
+.hero-landing {
+  padding: 11.5rem 0 20rem;
+  position: relative;
+  z-index: 2;
+  
+  @include respond-to(sm) {
+    padding: 11rem 0 0;
+  }
+  
+  @include respond-to(xs) {
+    padding: 9rem 0 10rem;
+  }
+  
+  &__title {
+    margin: 8rem 0 4rem;
+    
+    @include respond-to(xs) {
+      margin: 5rem 0 3rem;
+    }
+  }
+  
+  &__copy {
+    margin-bottom: 5rem;
+    
+    @include respond-to(xs) {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  &__buttons {
+    @include respond-to(lt-sm) {
+      margin-bottom: 8rem;
+    }
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.hero-points {
+  padding: 2rem 0 12rem;
+  position: relative;
+  z-index: 3;
+  
+  &__title {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    position: relative;
+    
+    &:after {
+      background: palette(other);
+      bottom: 0;
+      content: "";
+      height: .1rem;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 11rem;
+    }
+  }
+  
+  &__description {
+    margin: 0 auto 38rem;
+    max-width: 55rem;
+    width: 100%;
+    
+    @include respond-to(lt-sm) {
+      margin-bottom: 35rem;
+    }
+  }
+  
+  .point {
+    
+    @include respond-to(lt-md) {
+      margin-top: 5rem;
+    }
+    
+    &__icon {
+      @extend .flex;
+      @extend .flex__vertical-center;
+      @extend .flex__center;
+      
+      background-color: palette(white);
+      border-radius: 50%;
+      height: 10rem;
+      margin: auto;
+      transition: .5s;
+      width: 10rem;
+      
+      @include box-shadow(0, 0, .5rem, transparentize(palette(other, dark), .92));
+      
+      svg {
+        path {
+          fill: palette(secondary)
+        }
+        
+        line,
+        rect,
+        path {
+          stroke: palette(secondary);
+        }
+      }
+    }
+    
+    &__title {
+      margin: 4rem 0;
+    }
+    
+    &__description {
+      @include respond-to(lt-md) {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}

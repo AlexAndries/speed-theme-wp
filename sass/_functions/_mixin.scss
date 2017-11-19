@@ -1,0 +1,484 @@
+// ADDS A BROWSER PREFIX TO THE PROPERTY
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+// BACKGROUND GRADIENT
+@mixin background-gradient($startColor: #3c3c3c, $endColor: #999999) {
+  background-color: $startColor;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+  background-image: -moz-linear-gradient(top, $startColor, $endColor);
+  background-image: -ms-linear-gradient(top, $startColor, $endColor);
+  background-image: -o-linear-gradient(top, $startColor, $endColor);
+  background-image: linear-gradient(top, $startColor, $endColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+// BACKGROUND HORIZONTAL
+@mixin background-horizontal($startColor: #3c3c3c, $endColor: #999999) {
+  background-color: $startColor;
+  background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+  background-image: -webkit-linear-gradient(left, $startColor 0%, $endColor 100%);
+  background-image: -moz-linear-gradient(left,  $startColor 0%, $endColor 100%);
+  background-image: -ms-linear-gradient(left, $startColor 0%, $endColor 100%);
+  background-image: -o-linear-gradient(left, $startColor 0%, $endColor 100%);
+  background-image: linear-gradient(left, $startColor 0%, $endColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}', gradientType='1');
+}
+
+// BACKGROUND RADIAL
+@mixin background-radial($startColor: #ffffff, $startPos: 0%, $endColor: #000000, $endPos:100%) {
+  background: -moz-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop($startPos, $startColor), color-stop($endPos, $endColor));
+  background: -webkit-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+  background: -o-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+  background: -ms-radial-gradient(center, ellipse cover, $startColor $startPos, $endColor $endPos);
+  background: radial-gradient(ellipse at center, $startColor $startPos, $endColor $endPos);
+}
+
+// BACKGROUND SIZE
+@mixin background-size($width: 100%, $height: $width) {
+  @if type-of($width) == 'number' and $height != null {
+    @include css3-prefix('background-size', $width $height);
+  } @else {
+    @include css3-prefix('background-size', $width);
+  }
+}
+
+// BACKGROUND COLOR OPACITY
+@mixin background-opacity($color: #000000, $opacity: 0.85) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+// BORDER RADIUS
+@mixin border-radius($radius: 5px) {
+  @include css3-prefix('border-radius', $radius);
+}
+
+@mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
+  -webkit-border-top-left-radius: $topLeftRadius;
+  -webkit-border-top-right-radius: $topRightRadius;
+  -webkit-border-bottom-right-radius: $bottomRightRadius;
+  -webkit-border-bottom-left-radius: $bottomLeftRadius;
+
+  -moz-border-radius-topleft: $topLeftRadius;
+  -moz-border-radius-topright: $topRightRadius;
+  -moz-border-radius-bottomright: $bottomRightRadius;
+  -moz-border-radius-bottomleft: $bottomLeftRadius;
+
+  border-top-left-radius: $topLeftRadius;
+  border-top-right-radius: $topRightRadius;
+  border-bottom-right-radius: $bottomRightRadius;
+  border-bottom-left-radius: $bottomLeftRadius;
+}
+
+// BOX
+@mixin box($orient: horizontal, $pack: center, $align: center) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+
+  @include css3-prefix('box-orient', $orient);
+  @include css3-prefix('box-pack', $pack);
+  @include css3-prefix('box-align', $align);
+}
+
+// BOX RGBA
+@mixin box-rgba($r: 60, $g: 3, $b: 12, $opacity: 0.23, $color: #3c3c3c) {
+  background-color: transparent;
+  background-color: rgba($r, $g, $b, $opacity);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}', endColorstr='#{$color}');
+  zoom: 1;
+}
+
+// BOX SHADOW
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+  @if ($inset != "") {
+    @include css3-prefix('box-shadow', $inset $x $y $blur $color);
+  } @else {
+    @include css3-prefix('box-shadow', $x $y $blur $color);
+  }
+}
+
+// BOX SIZING
+@mixin box-sizing($type: border-box) {
+  @include css3-prefix('box-sizing', $type);
+}
+
+// COLUMNS
+@mixin columns($count: 3, $gap: 10) {
+  @include css3-prefix('column-count', $count);
+  @include css3-prefix('column-gap', $gap);
+}
+
+// DOUBLE BORDERS
+@mixin double-borders($colorOne: #3c3c3c, $colorTwo: #999999, $radius: 0) {
+  border: 1px solid $colorOne;
+
+  @include css3-prefix('box-shadow', 0 0 0 1px $colorTwo);
+
+  @include border-radius($radius);
+}
+
+// FLEX
+//
+@mixin flex($wrap: nowrap, $direction: row, $justify: flex-start, $align: stretch, $content: stretch, $order: 1) {
+  display: flex;
+
+  @if $wrap != nowrap {
+    flex-wrap: $wrap;
+  }
+  @if $direction != row {
+    flex-direction: $direction;
+  }
+  @if $justify != flex-start {
+    justify-content: $justify;
+  }
+  @if $align != stretch {
+    align-items: $align;
+  }
+  @if $content != stretch {
+    align-content: $align;
+  }
+  @if $order != 1 {
+    order: $order;
+  }
+}
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+
+  flex-wrap: $value;
+}
+
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -font-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  justify-content: $value;
+}
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  align-items: $value;
+}
+
+@mixin align-content($value: stretch) {
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+
+  align-content: $value;
+}
+
+@mixin flex-grow($int: 1) {
+  flex-grow: $int;
+}
+
+@mixin flex-percentage($percentage: 1) {
+  @if $percentage != 1 {
+    box-sizing: border-box;
+    flex: 1 1 $percentage;
+    max-width: $percentage;
+  } @else {
+    box-sizing: border-box;
+    flex: 1;
+    max-width: 100%;
+  }
+}
+
+@mixin order($int: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -moz-box-ordinal-group: $int + 1;
+  -webkit-order: $int;
+  -ms-flex-order: $int;
+  order: $int;
+}
+
+// FLIP
+@mixin flip($scaleX: -1) {
+  @include css3-prefix('transform', scaleX($scaleX));
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+// OPACITY
+@mixin opacity($opacity: 0.5) {
+  $opacityMultiplied: ($opacity * 100);
+
+  filter: alpha(opacity=$opacityMultiplied);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
+  @include css3-prefix('opacity', $opacity);
+}
+
+// OUTLINE RADIUS
+@mixin outline-radius($radius: 5px) {
+  @include css3-prefix('outline-radius', $radius);
+}
+
+// RESIZE
+@mixin resize($direction: both) {
+  @include css3-prefix('resize', $direction);
+}
+
+// ROTATE
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  @include css3-prefix('transform', rotate($deg + deg));
+  filter: progid:DXImageTransform.Microsoft.Matrix(
+      M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+@mixin rotateX($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  @include css3-prefix('transform', rotateX($deg + deg));
+  zoom: 1;
+}
+
+@mixin rotateY($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  @include css3-prefix('transform', rotateY($deg + deg));
+  zoom: 1;
+}
+
+// TEXT SHADOW
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+// TRANSFORM
+@mixin transform($params) {
+  @include css3-prefix('transform', $params);
+}
+
+// TRANSFORM-ORIGIN
+@mixin transform-origin($params) {
+  @include css3-prefix('transform-origin', $params);
+}
+
+// TRANSFORM STYLE
+@mixin transform-style($style: preserve-3d) {
+  @include css3-prefix('transform-style', $style);
+}
+
+// TRANSITION
+@mixin transition($properties...) {
+
+  @if length($properties) >= 1 {
+    @include css3-prefix('transition', $properties);
+  } @else {
+    @include css3-prefix('transition', "all .3s ease-in-out 0s");
+  }
+}
+
+// TRIPLE BORDERS
+@mixin triple-borders($colorOne: #3c3c3c, $colorTwo: #999999, $colorThree: #000000, $radius: 0) {
+  border: 1px solid $colorOne;
+
+  @include border-radius($radius);
+
+  @include css3-prefix('box-shadow', "0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}");
+}
+
+// KEYFRAMES
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// ANIMATION
+@mixin animation($str) {
+  @include css3-prefix('animation', $str);
+}
+
+// FONT FACE
+@mixin font-face($src,$name) {
+  @font-face {
+    font-family: '#{$name}';
+    src: url('../fonts/#{$src}.eot');
+    src: url('../fonts/#{$src}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/#{$src}.woff') format('woff'),
+    url('../fonts/#{$src}.ttf') format('truetype'),
+    url('../fonts/#{$src}.svg#svg#{$src}') format('svg');
+  }
+}
+
+@mixin fall-font($font) {
+  font-family: $font, sans-serif;
+}
+
+@function decimal-round ($number, $digits: 0, $mode: round) {
+  $n: 1;
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  } @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  } @else {
+    @warn '#{$mode} is undefined keyword.';
+    @return $number;
+  }
+}
+
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin absolute-hidden() {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+
+//Media Queries
+@mixin respond-to($device) {
+  @each $name, $point in $breakpoints {
+    @if $name == $device {
+      @media #{$point} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin respond-to-custom($media) {
+  @media #{$media} {
+    @content;
+  }
+}
+
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+@mixin generate-color-classes($colorName) {
+  @each $tone, $value in map-get($palettes, $colorName) {
+    @if ($tone == 'base') {
+      &__color {
+        color: palette($colorName, $tone);
+      }
+      &__bg {
+        background-color: palette($colorName, $tone);
+      }
+    } @else {
+      &__color--#{$tone} {
+        color: palette($colorName, $tone);
+      }
+      &__bg--#{$tone} {
+        background-color: palette($colorName, $tone);
+      }
+    }
+  }
+}
+
+@mixin on-hover() {
+  @include respond-to(onlyDesktop) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @include respond-to(tablet) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+// PLACEHOLDER
+@mixin placeholder-custom {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  :-ms-input-placeholder {
+    @content
+  }
+}

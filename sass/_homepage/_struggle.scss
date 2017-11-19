@@ -1,0 +1,182 @@
+.struggle-block {
+  color: palette(other, light);
+  padding: 8rem 0 11.5rem;
+  
+  &--border-top {
+    border-top: .1rem solid transparentize(palette(white), .8);
+    padding: 4rem 0;
+    
+    @include respond-to(lt-sm) {
+      margin-top: 4rem;
+      padding: 4rem 0 0;
+    }
+  }
+  
+  &--border-bottom {
+    border-bottom: .1rem solid transparentize(palette(white), .8);
+    height: 100%;
+    
+    @include respond-to(lt-sm) {
+      border-bottom: 0 none;
+    }
+  }
+  
+  &__leaky-per-day {
+    letter-spacing: .05em;
+    margin-top: 1.5rem;
+    
+    span {
+      font-size: 7.2rem;
+      line-height: 2rem;
+    }
+  }
+  
+  &__leaky-copy {
+    font-size: 2rem;
+    letter-spacing: .025em;
+    line-height: 3rem;
+    
+    @include respond-to(lt-sm) {
+      padding: 2rem 0 2.5rem;
+    }
+  }
+  
+  &__bathtubs {
+    
+    @include respond-to(lt-sm) {
+      padding-bottom: 1rem;
+    }
+    
+    .bath-tub-icon {
+      height: 1rem;
+      margin: 0 0 1.7rem;
+      opacity: .5;
+      width: 2.9rem;
+      
+      @include respond-to(lt-sm) {
+        margin: 0 0 1.5rem;
+        width: 1.9rem;
+      }
+      
+      &:nth-child(9n) {
+        margin-right: 0;
+      }
+      
+      &:nth-child(9n+1) {
+        margin-left: 0;
+      }
+      
+      path {
+        fill: palette(white);
+      }
+      
+    }
+  }
+  
+  &__bathtubs-copy {
+    font-size: 1.5rem;
+    letter-spacing: .025em;
+    line-height: 3.6rem;
+  }
+  
+  &__homeowners {
+    display: inline-block;
+    width: 6rem;
+    
+    .col-6 {
+      &:first-child {
+        padding-right: .5rem;
+      }
+      
+      &:last-child {
+        padding-left: .5rem;
+      }
+    }
+    
+    .homeowner-icon {
+      height: 2.5rem;
+      width: 2.9rem;
+      
+      path {
+        fill: palette(white);
+      }
+    }
+    
+    &--green {
+      .homeowner-icon {
+        opacity: .5;
+      }
+    }
+    
+    &--white,
+    &--green {
+      margin-bottom: 1.4rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  &__homeowners-content {
+    display: inline-block;
+    text-align: right;
+  }
+  
+  &__homeowners-percent {
+    font-size: 2.8rem;
+    line-height: 2rem;
+    
+    span {
+      display: inline-block;
+      font-size: 5rem;
+      padding-top: 1rem;
+    }
+  }
+  
+  &__homeowners-copy {
+    font-size: 1.7rem;
+    letter-spacing: .025em;
+    line-height: 3rem;
+  }
+  
+  &__water-damage-cost-icon {
+    
+    @include respond-to(lt-sm) {
+      padding-bottom: 13rem;
+    }
+    
+    .water-damage-cost-icon {
+      height: 7.5rem;
+      width: 9rem;
+      
+      path {
+        opacity: .5;
+        fill: palette(white);
+      }
+    }
+  }
+  
+  &__water-damage-cost {
+    &-avg {
+      font-size: 2.8rem;
+      line-height: 2rem;
+      
+      @include respond-to(lt-sm) {
+        text-align: right;
+      }
+      
+      span {
+        display: inline-block;
+        font-size: 5rem;
+        padding-top: 1rem;
+      }
+    }
+    
+    &-copy {
+      font-size: 1.7rem;
+      letter-spacing: .025em;
+      line-height: 3rem;
+    }
+  }
+}

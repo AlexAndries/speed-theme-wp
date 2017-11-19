@@ -1,0 +1,115 @@
+
+
+.rtl #wpcontent, .rtl #wpfooter {
+	margin-right: 200px;
+	margin-left:0;
+}
+
+.rtl #wpcontent {
+	padding-right:0;
+}
+
+.rtl .welcome-panel .welcome-panel-column:first-child {
+	padding-left:0;
+	padding-right: 23px;
+}
+
+.rtl .welcome-panel .welcome-panel-close {
+	right: auto;
+	left: 23px;
+}
+
+.rtl #adminmenu .wp-has-current-submenu ul > li > a, .rtl .folded #adminmenu li.menu-top .wp-submenu > li > a {
+	padding: 0 23px 0 23px;
+	margin-right: 10px;
+	margin-left:0;
+}
+
+.rtl .folded #adminmenu li.menu-top .wp-submenu > li > a:hover,
+.rtl #adminmenu .wp-submenu a:focus,
+.rtl #adminmenu .wp-submenu a:hover,
+.rtl #adminmenu .wp-submenu li.current a,
+.rtl #adminmenu .wp-submenu li.current a:hover {
+	border-right-color: #f95e44;
+}
+
+.rtl .folded #adminmenu li.menu-top .wp-submenu > li > a:hover,
+.rtl #adminmenu .wp-submenu a:focus,
+.rtl #adminmenu .wp-submenu a:hover,
+.rtl #adminmenu .wp-submenu li.current a,
+.rtl #adminmenu .wp-submenu li.current a:hover {
+	border-right: 3px solid #f95e44;
+	border-left: 0 !important;
+}
+
+.rtl #adminmenu .wp-not-current-submenu .wp-submenu {
+	left: auto;
+	right: 200px;
+}
+
+.rtl #adminmenu .wp-not-current-submenu li > a, .rtl .folded #adminmenu .wp-has-current-submenu li > a {
+	padding: 0 14px 0 0;
+	margin-right: 23px;
+	margin-left:0;
+}
+
+.rtl.menu-collapsed #adminmenu .wp-not-current-submenu .wp-submenu {
+	right: 46px;
+}
+
+.rtl.menu-collapsed #wpcontent, .rtl.menu-collapsed #wpfooter {
+	margin-right: 46px;
+}
+
+.rtl.folded #adminmenu li.menu-top .wp-submenu > li > a {
+	padding: 0 14px 0 0;
+	margin-left: 0;
+}
+
+.rtl #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+	border-right-color: transparent;
+}
+
+.rtl form h3, .rtl p.submit {
+	padding-right: 23px;
+	padding-left:0;
+}
+
+.rtl .wp-admin select {
+	padding: 8px;
+}
+
+.rtl .plugins .active th.check-column {
+	border-right-color: #f95e44;
+}
+
+.rtl .plugins .active th.check-column {
+	border-left: 0 solid;
+}
+
+.rtl #wpadminbar .quicklinks .menupop.hover ul li a:hover {
+	padding-right: 20px;
+	padding-left:0;
+	border-right: 3px solid #f95e44;
+	border-left: 0 !important;
+}
+
+.rtl #wpadminbar .quicklinks .menupop.hover ul li .ab-item {
+	margin-right: 23px;
+	margin-left:0;
+}
+
+.rtl #wpadminbar .ab-top-secondary .menupop .menupop > .ab-item:before {
+	top: 5px;
+	right: 3px;
+	content: '\f139';
+}
+
+.rtl .contextual-help-tabs .active {
+	border-right: 3px solid #f95e44;
+	border-left:0;
+}
+
+.rtl .contextual-help-tabs {
+	margin-right: -23px;
+}

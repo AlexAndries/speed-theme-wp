@@ -1,0 +1,54 @@
+.product-block {
+  &__title {
+    margin: 8.5rem 0 5.5rem;
+    
+    @include respond-to(lt-sm) {
+      margin: 6.5rem 0 2.5rem;
+    }
+  }
+  
+  &__content {
+    margin-bottom: 7rem;
+    
+    @include respond-to(lt-sm) {
+      margin-bottom: 4rem;
+    }
+    
+    p {
+      margin-bottom: 5rem;
+      
+      @include respond-to(lt-sm) {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+  
+  &__price {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    margin-bottom: 1rem;
+    
+    span {
+      font-size: 5rem;
+      letter-spacing: 0;
+      line-height: 5rem;
+      margin-bottom: 1rem;
+    }
+    
+    &--msrp {
+      margin-left: 3.5rem;
+      opacity: .3;
+      
+      span {
+        text-decoration: line-through;
+      }
+    }
+  }
+  
+  &__button {
+    
+    @include respond-to(lt-sm) {
+      margin-bottom: 2rem;
+    }
+  }
+}

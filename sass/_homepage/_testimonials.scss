@@ -1,0 +1,130 @@
+.testimonials-block {
+  overflow: hidden;
+  padding: 10rem 0;
+  position: relative;
+  
+  @include respond-to(lt-sm) {
+    padding: 5rem 0 7rem;
+    
+    .owl-flex {
+      .owl-stage {
+        display: inline-block !important;
+        
+        .is-safari & {
+          .owl-item {
+            display: inline-block !important;
+          }
+        }
+      }
+    }
+  }
+  
+  &__title {
+    font-size: 2.4rem;
+    line-height: 4.2rem;
+    margin-bottom: 3rem;
+  }
+  
+  &__slide-progress {
+    background-color: palette(white, extra-dark);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    
+    &--bar {
+      background-color: palette(secondary);
+      height: 1rem;
+      transition: width 0s;
+      width: 0;
+      z-index: 2;
+    }
+  }
+  
+  &__slider-wrapper {
+    position: relative;
+  }
+  
+  .slider-item {
+    background-color: palette(white);
+    border-radius: 2rem;
+    padding: 5.5rem;
+    width: 100%;
+    
+    @include box-shadow(0, 0, .5rem, transparentize(palette(other, dark), .92));
+    @include respond-to(lt-sm) {
+      padding: 4rem 3rem;
+    }
+    
+    &__placeholder-title {
+      line-height: 4.2rem;
+    }
+    
+    &__content {
+      letter-spacing: 0;
+      line-height: 3.6rem;
+      margin: 2rem 0 9rem;
+      padding-left: 2rem;
+      
+      @include respond-to(lt-sm) {
+        font-size: 1.6rem;
+        letter-spacing: 0;
+        line-height: 3rem;
+        margin: 0 0 5rem;
+        text-align: center;
+      }
+    }
+    
+    &__author {
+      letter-spacing: 0;
+      line-height: 2.4rem;
+      padding-left: 2rem;
+      
+      @include respond-to(lt-sm) {
+        font-size: 1.7rem;
+      }
+    }
+    
+    &__location {
+      letter-spacing: 0;
+      line-height: 3rem;
+      padding-left: 2rem;
+      
+      @include respond-to(lt-sm) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+  
+  .owl-nav {
+    bottom: 6rem;
+    left: 3rem;
+    position: absolute;
+    right: 3rem;
+    visibility: hidden;
+    
+    @include respond-to(lt-sm) {
+      bottom: 5rem;
+    }
+    
+    .owl-prev,
+    .owl-next {
+      color: palette(secondary);
+      font-size: 2.7rem;
+      visibility: visible;
+      
+      &.disabled {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    
+    .owl-next {
+      float: right;
+    }
+    
+    .owl-prev {
+      float: left;
+    }
+  }
+}

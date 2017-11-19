@@ -1,0 +1,62 @@
+$palettes: (
+  white: (
+    base: #ffffff,
+    dark: #dadfe7,
+    light: #e8ebf1,
+    extra-light: #f7faff,
+    extra-dark: #d5deec,
+    another-white: #eef1f5
+  ),
+  black: (
+    base: #000000,
+    light: #bfc6d1
+  ),
+  primary: (
+    base: #062f4d,
+    light: #0c4269,
+    extra-light: #829abd,
+    dark: #001f36,
+    another-extra-light: #8199be
+  ),
+  secondary: (
+    base: #1dd491,
+    light: #5de9bc,
+    dark: #7bc24d
+  ),
+  other: (
+    base: #77869b,
+    extra-base: #727e8f,
+    light: #a1acbc,
+    dark: #596880,
+    another-color: #aabad2,
+    another-color-2: #c4ccd4
+  ),
+  red: (
+    base: #e21e1e
+  )
+);
+
+$breakpoints: (
+  gt-lg: '(min-width: 1920px)',
+  lg: '(min-width: 1281px) and (max-width: 1920px)',
+  lt-lg: '(max-width: 1920px)',
+  gt-md: '(min-width: 1280px)',
+  md: '(min-width: 961px) and (max-width: 1280px)',
+  lt-md: '(max-width: 1280px)',
+  gt-sm: '(min-width: 961px)',
+  sm: '(min-width: 601px) and (max-width: 960px)',
+  lt-sm: '(max-width: 960px)',
+  gt-xs: '(min-width: 601px)',
+  xs: '(max-width: 600px)',
+  iphone-xs: '(max-width: 360px)'
+);
+
+$grid: (
+  prefix: 'col',
+  columns: 12,
+  space: 1.5rem,
+  clear-prefix: 'clear',
+  display-prefix: 'display',
+  displays: ('block', 'inline', 'inline-block'),
+  hidden-prefix: 'hide'
+);

@@ -1,0 +1,73 @@
+.icon {
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+  
+  &.action-icon {
+    height: 2.8rem;
+    width: 2.4rem;
+  
+    path {
+      fill: none !important;
+    }
+  }
+  
+  &.app-icon {
+    height: 4.4rem;
+    width: 2.6rem;
+  }
+  
+  &.bath-tub-icon {
+    height: 1rem;
+    width: 2.9rem;
+  }
+  
+  &.control-icon {
+    height: 2.7rem;
+    width: 2.2rem;
+  }
+  
+  &.device-icon {
+    height: 4.1rem;
+    width: 3.9rem;
+    
+    path {
+      fill: none !important;
+    }
+  }
+  
+  &.drop-icon {
+    height: 5.2rem;
+    width: 4rem;
+  }
+  
+  &.glasses-icon {
+    height: 1.4rem;
+    width: 3.6rem;
+  }
+  
+  &.homeowner-icon {
+    height: 2.5rem;
+    width: 2.9rem;
+  }
+  
+  &.service-icon {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+  
+  &.support-icon {
+    height: 5.5rem;
+    width: 5.1rem;
+  }
+  
+  &.water-damage-cost-icon {
+    height: 7.5rem;
+    width: 9rem;
+  }
+  
+  &.water-drop-icon {
+    height: 2.5rem;
+    width: 1.9rem;
+  }
+}

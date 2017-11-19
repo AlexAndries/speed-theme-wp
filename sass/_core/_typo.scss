@@ -1,0 +1,310 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.h1 {
+  font-size: 3.6rem;
+  line-height: 5rem;
+  
+  @include respond-to(sm) {
+    font-size: 3.4rem;
+    line-height: 4rem;
+  }
+  
+  @include respond-to(xs) {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+}
+
+.h2 {
+  font-size: 3.2rem;
+  line-height: 5rem;
+  
+  @include respond-to(xs) {
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+  }
+}
+
+.h3 {
+  font-size: 2.8rem;
+  line-height: 5rem;
+  
+  @include respond-to(lt-sm) {
+    font-size: 2.2rem;
+    line-height: 3.5rem;
+  }
+}
+
+.h4 {
+  font-size: 2.2rem;
+  line-height: 5rem;
+  
+  @include respond-to(xs) {
+    font-size: 2.0rem;
+    line-height: 3rem;
+  }
+}
+
+.h5 {
+  font-size: 1.8rem;
+  line-height: 5rem;
+  
+  @include respond-to(xs) {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+}
+
+.paragraph {
+  font-size: 1.7rem;
+  line-height: 3rem;
+  
+  &--small {
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+  }
+  
+  &--tiny {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  
+  &--styled {
+    padding-left: 3rem;
+    position: relative;
+    
+    @include respond-to(xs) {
+      br {
+        display: none;
+      }
+    }
+    
+    &:before {
+      background: palette(other);
+      bottom: .9rem;
+      content: "";
+      left: 0;
+      position: absolute;
+      top: .7rem;
+      width: .1rem;
+    }
+  }
+  
+  &--styled-right {
+    padding-right: 3rem;
+    position: relative;
+    
+    @include respond-to(xs) {
+      br {
+        display: none;
+      }
+    }
+    
+    &:before {
+      background: palette(other);
+      bottom: .9rem;
+      content: "";
+      right: 0;
+      position: absolute;
+      top: .7rem;
+      width: .1rem;
+    }
+  }
+  
+  h2 {
+    @extend .h2;
+    
+    padding-top: 1.7rem;
+  }
+  
+  h3 {
+    @extend .h3;
+    
+    padding-top: 1.6rem;
+  }
+  
+  h4 {
+    @extend .h4;
+    @extend .font_bold;
+    
+    padding-top: 1.5rem;
+  }
+  
+  h5 {
+    @extend .h5;
+    
+    padding-top: 1rem;
+  }
+  
+  p + p {
+    padding-top: 1rem;
+  }
+  
+  img {
+    height: auto;
+    
+    &.alignright {
+      float: right;
+      margin: 0 0 1em 1em
+    }
+    
+    &.alignleft {
+      float: left;
+      margin: 0 1em 1em 0
+    }
+    
+    &.aligncenter {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
+  }
+  
+  ul,
+  ol {
+    margin: 1rem 0 1rem 3rem;
+    padding-left: 2rem;
+    text-align: left;
+    
+    @include respond-to(xs) {
+      margin-left: 1rem;
+      padding-left: 1rem;
+    }
+  }
+  
+  ul {
+    list-style: disc;
+    
+    ul {
+      list-style: circle;
+      
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+}
+
+.text {
+  &-upper {
+    text-transform: uppercase;
+  }
+  
+  &-lower {
+    text-transform: lowercase;
+  }
+  
+  &-capitalize {
+    text-transform: capitalize;
+  }
+  
+  &-right {
+    text-align: right;
+  }
+  
+  &-left {
+    text-align: left;
+    
+    &--sm {
+      @include respond-to(sm) {
+        text-align: left;
+      }
+    }
+    
+    &--xs {
+      @include respond-to(xs) {
+        text-align: left;
+      }
+    }
+  }
+  
+  &-center {
+    text-align: center;
+    
+    &--sm {
+      @include respond-to(sm) {
+        text-align: center;
+      }
+    }
+    &--xs {
+      @include respond-to(xs) {
+        text-align: center;
+      }
+    }
+  }
+  
+  &-justify {
+    text-align: justify;
+  }
+}
+
+.has-bbcode {
+  strong {
+    @extend .font_bold
+  }
+}
+
+.font {
+  &_light {
+    font-family: 'Avenir Light';
+    
+    &-oblique {
+      font-family: 'Avenir Light Oblique';
+    }
+  }
+  
+  &_book {
+    font-family: 'Avenir Book';
+    
+    &-oblique {
+      font-family: 'Avenir Book Oblique';
+    }
+  }
+  
+  &_normal {
+    font-family: 'Avenir Roman';
+    
+    &-oblique {
+      font-family: 'Avenir Oblique';
+    }
+  }
+  
+  &_medium {
+    font-family: 'Avenir Medium';
+    
+    &-oblique {
+      font-family: 'Avenir Medium Oblique';
+    }
+  }
+  
+  &_bold {
+    font-family: 'Avenir Black';
+    
+    &-oblique {
+      font-family: 'Avenir Black Oblique';
+    }
+  }
+  
+  &_heavy {
+    font-family: 'Avenir Heavy';
+    
+    &-oblique {
+      font-family: 'Avenir Heavy Oblique';
+    }
+  }
+}

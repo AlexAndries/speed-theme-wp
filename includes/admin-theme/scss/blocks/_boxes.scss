@@ -1,0 +1,237 @@
+
+.postbox, .stuffbox {
+	margin-bottom: 23px;
+	padding: 0;
+	line-height: 1;
+}
+
+.postbox {
+	border:0;
+	background: #fff;
+	box-shadow: 0 2px 2px 0 rgba(150, 150, 150, 0.2);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(150, 150, 150, 0.2);
+	-moz-box-shadow: 0 2px 2px 0 rgba(150, 150, 150, 0.2);
+	-ms-box-shadow: 0 2px 2px 0 rgba(150, 150, 150, 0.2);
+	-o-box-shadow: 0 2px 2px 0 rgba(150, 150, 150, 0.2);
+}
+
+.postbox .hndle, .stuffbox .hndle {
+	line-height: 46px;
+	font-size: 17px;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-family: Oswald, Helvetica, Arial, sans-serif;
+	border-bottom: 0 solid #f95e44;
+	padding: 0 23px;
+	background: #f95e44;
+	color: #ffffff; /*rgb(32, 32, 32);*/
+}
+
+.postbox .handlediv {
+	height: 46px;
+	width: 46px;
+	text-align: center;
+}
+
+.js .meta-box-sortables .postbox .handlediv:before, .js .sidebar-name .sidebar-name-arrow:before {
+	line-height: 46px;
+	right:0;
+	padding:0;
+	font-size: 23px;
+	color: #eeeeee;
+}
+
+.postbox .inside, .stuffbox .inside {
+	line-height: 23px;
+	font-size: 14px;
+}
+
+
+
+#poststuff h3 {
+	font-size: 17px;
+	line-height: 46px;
+	padding: 0 23px;
+	margin: 0;
+  background-position: left center;
+}
+
+#poststuff #submitdiv .inside, #poststuff .inside {
+	margin-top: 21px;
+}
+
+.postbox .inside, .stuffbox .inside {
+	padding: 0 23px 23px 23px;
+}
+
+#poststuff #submitdiv .inside #minor-publishing {
+	padding: 0 23px 17px 23px;
+}
+
+.misc-pub-section, #misc-publishing-actions, #minor-publishing-actions {
+	padding: 0;
+}
+
+#misc-publishing-actions {
+	padding-top: 15px;
+}
+
+.misc-pub-section {
+	min-height: 30px;
+	line-height: 30px;
+	margin-bottom:0;
+	color: #353535;
+}
+
+#misc-publishing-actions label[for=post_status]:before, #post-body #visibility:before, #post-body .misc-pub-revisions:before, .curtime #timestamp:before, span.wp-media-buttons-icon:before {
+	color: #777777;
+	line-height: 30px;
+	font-size: 17px;
+}
+
+#major-publishing-actions {
+	padding: 12px 23px 11px 23px;
+	clear: both;
+	border-top: 1px solid #eee;
+	background: #f5f5f5;
+}
+
+#delete-action {
+	line-height: 36px;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-family: Oswald, Helvetica, Arial, sans-serif; /*@*/
+}
+
+.category-tabs {
+	margin: 0 0 2px 0;
+	
+}
+
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
+	padding: 12px 12px 11px 12px;
+}
+
+.tabs-panel .categorychecklist {
+	margin-bottom:0;
+}
+
+#category-adder h4 {
+	margin: 23px 0 0 0;
+}
+
+.tagsdiv .newtag {
+	width: 160px;
+}
+
+
+#dashboard_activity .inside, .postbox .inside {
+	margin-top: 21px;
+}
+
+#dashboard_right_now .main {
+	padding: 0 23px 23px 23px;
+}
+
+.activity-block {
+	padding: 0;
+}
+
+#latest-comments.activity-block {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#activity-widget #latest-comments #the-comment-list .comment-item {
+	padding: 23px;
+}
+
+#activity-widget #the-comment-list img {
+	top: auto;
+}
+
+#dashboard-widgets #dashboard_activity h4 {
+	line-height: 46px;
+	font-size: 14px;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-family: Oswald, Helvetica, Arial, sans-serif; /*@*/
+	padding: 0 23px;
+	margin:0;
+}
+
+#dashboard_activity ul {
+	padding: 0 23px 23px 23px;
+	margin:0;
+}
+
+#activity-widget #the-comment-list .comment-item h4 {
+	font-family: "Open Sans", sans-serif;
+	padding: 0;
+}
+
+#activity-widget #the-comment-list .comment-item:nth-child(odd) {
+	background: #fafafa;
+}
+
+#activity-widget #the-comment-list .comment-item:nth-child(even) {
+	background: #ffffff;
+}
+
+#latest-comments #the-comment-list .comment-item p.row-actions {
+	margin: 0;
+}
+
+#latest-comments #the-comment-list .comment-item p.row-actions a {
+	font-size: 13px;
+}
+
+#latest-comments #the-comment-list .comment-item blockquote, #latest-comments #the-comment-list .comment-item blockquote p {
+	display: inline-block;
+}
+
+#dashboard_activity .subsubsub {
+	border-top: 1px solid #eeeeee;
+	margin-top: 0;
+	padding: 0 23px 0 23px;
+	line-height: 46px;
+}
+
+#bbp-dashboard-right-now .inside {
+	padding: 21px 23px 0 23px;
+}
+
+
+#dashboard_quick_press form {
+	margin: 21px 23px 0 23px;
+	padding-bottom: 23px;
+}
+
+/* dashboard rss widget*/
+#dashboard_primary .rss-widget {
+	padding: 0 23px;
+}
+
+#dashboard_primary .rss-widget p {
+	margin: 12px 0 11px 0;
+}
+
+#dashboard_primary .rss-widget li {
+	padding: 12px 0 11px 0;
+}
+
+#dashboard_primary .rss-widget:last-child {
+	padding-bottom: 0;
+}
+
+.search-box input[name="s"], .tablenav .search-plugins input[name="s"], .tagsdiv .newtag {
+	min-height: 37px;
+}
+
+.column-employee_of_the_month {
+  width: 200px;
+}
+
+.acf-input-prepend, .acf-input-append {
+  height: 28px !important;
+}

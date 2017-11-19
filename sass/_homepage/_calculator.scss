@@ -1,0 +1,337 @@
+.calculator-block {
+  background: palette(primary) no-repeat left 108%;
+  padding: 8rem 0 11.5rem;
+  overflow: hidden;
+  
+  @include respond-to(lt-sm) {
+    padding-bottom: 18rem;
+    
+    background-position: center 101%;
+  }
+  
+  &__title {
+    font-size: 3rem;
+    letter-spacing: .1em;
+  }
+  
+  &__icon {
+    border-right: .1rem solid transparentize(palette(white, dark), .7);
+    color: palette(primary, extra-light);
+    font-size: 3.4rem;
+    height: 100%;
+    margin-right: 3rem;
+    min-width: 7rem;
+    padding: 0 3rem 0 1.5rem;
+    text-align: center;
+  }
+  
+  &__bar {
+    border-right: .1rem solid transparentize(palette(white, dark), .7);
+    display: inline-block;
+    height: 100%;
+    margin: 0 1.5rem;
+    width: .1rem;
+    
+    @include respond-to(md) {
+      display: none;
+    }
+    
+    @include respond-to(sm) {
+      display: none;
+    }
+    
+    &.hide {
+      opacity: 0;
+    }
+  }
+  
+  &__clear {
+    padding: 3rem 0;
+    width: 100%;
+    
+    @include respond-to(lt-sm) {
+      padding: 1.5rem 0;
+    }
+    
+    &--small {
+      padding: 1.5rem 0;
+      width: 100%;
+    }
+    
+    &--main {
+      
+      @include respond-to(lt-sm) {
+        padding: 3rem 0;
+      }
+      
+    }
+  }
+  
+  &__subtitle {
+    font-size: 2rem;
+    letter-spacing: .1em;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    white-space: nowrap;
+  }
+  
+  &__label {
+    color: palette(primary, another-extra-light);
+    font-size: 1.7rem;
+    letter-spacing: .075em;
+    line-height: 1.7rem;
+    margin-bottom: 2rem;
+    
+    @include respond-to(lt-md) {
+      margin-top: 2rem;
+    }
+    
+    &--small {
+      font-size: 1.4rem;
+      opacity: .5;
+    }
+  }
+  
+  &__input {
+    border-bottom: .2rem solid palette(primary, extra-light);
+    padding-bottom: 1.5rem;
+    
+    input {
+      background: transparent;
+      border: 0 none;
+      color: palette(white);
+      font-size: 3rem;
+      letter-spacing: .025em;
+      max-width: 14.5rem;
+      
+      @include respond-to(lt-md) {
+        max-width: 75%;
+      }
+    }
+    
+    &--small {
+      opacity: .5;
+      transition: .5s;
+      
+      &:hover {
+        opacity: 1;
+      }
+      
+      input {
+        color: palette(primary, extra-light);
+        max-width: 13.5rem;
+        transition: .5s;
+        
+        &:focus {
+          color: palette(white);
+        }
+        
+        @include respond-to(lt-md) {
+          max-width: 65%;
+        }
+      }
+    }
+    
+    span {
+      color: palette(primary, extra-light);
+      display: inline-block;
+      padding-bottom: .5rem;
+    }
+  }
+  
+  &__switch {
+    background-color: transparentize(palette(white), .95);
+    border-radius: 1.8rem;
+    display: inline-block;
+    font-size: 0;
+    padding: .4rem;
+    text-align: center;
+    width: 3.8rem;
+    
+    input:checked + label {
+      background-color: transparentize(palette(other, dark), .6);
+      color: white;
+    }
+    
+    label {
+      border-radius: 50%;
+      color: palette(secondary);
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.5rem;
+      height: 3rem;
+      line-height: 3rem;
+      margin-bottom: .5rem;
+      width: 3rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  &__sub-totals {
+    
+    @include respond-to(lt-sm) {
+      border-left: .1rem solid transparentize(palette(white, dark), .7);
+      margin-left: 7rem;
+      padding-left: 3rem;
+      text-align: left;
+    }
+    
+    span {
+      color: palette(primary, extra-light);
+      display: inline-block;
+      font-size: 1.5rem;
+      letter-spacing: .1em;
+      line-height: 1.8rem;
+      white-space: nowrap;
+      width: 100%;
+      
+      @include respond-to(lt-sm) {
+        width: 9rem;
+      }
+      
+      &.calculator-block__sub-totals--price {
+        @extend .font_medium;
+        
+        color: palette(white);
+        font-size: 3rem;
+        letter-spacing: .05em;
+        line-height: 3.5rem;
+        padding-top: 2rem;
+        
+        @include respond-to(lt-sm) {
+          float: left;
+          padding-right: 2rem;
+          padding-top: 0;
+          width: auto;
+        }
+      }
+    }
+  }
+  
+  &__disclaimer {
+    padding-left: 7rem;
+    
+    @include respond-to(md) {
+      padding-left: 0;
+      padding-top: 1rem;
+    }
+    
+    span {
+      color: palette(white);
+    }
+  }
+  
+  &__left-align {
+    @include respond-to(lt-sm) {
+      margin-left: 7rem;
+    }
+  }
+  
+  &__total {
+    margin-bottom: -1rem;
+    margin-top: 3rem;
+    
+    @include respond-to(lt-sm) {
+      margin: 1rem 0 3rem 7rem;
+      text-align: left;
+    }
+    
+    &-content {
+      color: palette(white);
+      font-size: 2rem;
+      letter-spacing: .1em;
+      line-height: 2.4rem;
+      padding-right: 3rem;
+      width: 17rem;
+  
+      @include respond-to(lt-sm) {
+        order: 2;
+        padding: 0 0 0 3rem;
+      }
+    }
+    
+    &-price {
+      @extend .font_medium;
+      
+      color: palette(secondary);
+      font-size: 6rem;
+      letter-spacing: .05em;
+      line-height: 6rem;
+      
+      @include respond-to(lt-sm) {
+        order: 1;
+      }
+    }
+  }
+  
+  &__content {
+    color: palette(other, light);
+    font-size: 1.5rem;
+    letter-spacing: .075em;
+    line-height: 2.8rem;
+  }
+  
+  &__select {
+    border-bottom: .2rem solid palette(primary, extra-light);
+    width: 100%;
+    
+    &.styled-select--autocomplete {
+      .styled-select__current {
+        padding: .3rem 0 .4rem;
+      }
+    }
+    
+    .styled-select {
+      &__current {
+        background-color: transparent;
+        color: palette(white);
+        font-size: 2.8rem;
+        letter-spacing: .075em;
+        line-height: 1rem;
+        margin-right: 2.5rem;
+        padding: 2rem 0;
+        vertical-align: middle;
+        white-space: nowrap;
+        
+        &--input {
+          border: 0 none;
+          line-height: 1;
+          
+          &::placeholder {
+            color: transparentize(palette(white), .7);
+          }
+        }
+        
+        .fa {
+          color: palette(secondary);
+          font-size: 1.2rem;
+          margin-right: .5rem;
+        }
+      }
+      
+      &__drop-down {
+        background-color: palette(primary, extra-light)
+      }
+      
+      &__element {
+        color: palette(white);
+        font-size: 2rem;
+        letter-spacing: .075em;
+        white-space: nowrap;
+        
+        &--selected {
+          background-color: palette(primary, light);
+          color: palette(secondary)
+        }
+        
+        &:hover {
+          background-color: palette(white);
+          color: palette(primary);
+        }
+      }
+    }
+  }
+}
